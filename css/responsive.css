@@ -1,0 +1,49 @@
+@media only screen and (max-width:1024px) {
+    .banner .content:after {
+        bottom: -32%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .banner .content:after {
+        bottom: -41%;
+    }
+    .banner .content {
+        padding: 50px 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    section.common {
+        margin: 7%;
+    }
+    .banner .content .profilePic {
+        width: 80%;
+        flex: unset;
+    }
+    .banner .content .decription {
+        width: 90%;
+        flex: unset;
+    }
+    .nameSec h1 {
+        font-size: 24px;
+    }
+    header {
+        padding: 10px;
+    }
+    .recentworkBox ul li {
+        width: 80%;
+    }
+    footer {
+        padding: 20px;
+    }
+    .summarySec, .skillSetSec, .recentwork {
+        padding: 30px 20px;
+    }
+    footer .contactInfo a {
+        margin: 5px 20px;
+    }
+    .banner .content:after {
+        background-size: 145%;
+    }
+}

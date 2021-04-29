@@ -1,0 +1,480 @@
+@font-face {
+    font-family: "VollkornM";
+    src: url(../fonts/Vollkorn-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "VollkornM";
+    color: #fff;
+    background-color: #2b2b2b;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+body.dayMode {
+    color: #000;
+    background-color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px 45px;
+    z-index: 99;
+    background-color: #000;
+    box-shadow: 2px 0px 20px 1px rgb(0 0 0);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+}
+
+body.dayMode header {
+    background-color: #fff;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.20);
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-btn {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 40px;
+}
+
+input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* First toggle btn */
+
+#_1st-toggle-btn span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 40px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+body.dayMode #_1st-toggle-btn span {
+    border: 2px solid #000;
+}
+
+#_1st-toggle-btn span:before, #_1st-toggle-btn span:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    width: 20px;
+    left: -5px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#_1st-toggle-btn span:before {
+    background-color: #fff;
+    transform: translate(-58px, 0px);
+    z-index: 1;
+}
+
+#_1st-toggle-btn span:after {
+    background-color: #ff5200;
+    transform: translate(8px, 0px);
+    z-index: 0;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked+span {
+    background-color: #000;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:active+span {
+    opacity: 0.5;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked+span:before {
+    background-color: #000;
+    transform: translate(30px, -6px);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked+span:after {
+    background-color: #fff;
+    transform: translate(37px, 0px);
+}
+
+/* First toggle btn completed */
+
+main {
+    margin-top: 80px;
+}
+
+section.common {
+    display: flex;
+    background: black;
+    margin: 3%;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0);
+    ;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+body.dayMode section.common {
+    background: #fff;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.20);
+}
+
+.banner .content {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    padding: 30px 50px;
+    flex-flow: wrap;
+    overflow: hidden;
+}
+
+.banner .content:after {
+    content: " ";
+    right: 0;
+    bottom: -24%;
+    opacity: .1;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    background-position: 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMjI0bDYwLTIxLjNDMTIwIDE4MSAyNDAgMTM5IDM2MCAxMjhzMjQwIDExIDM2MCAyMS4zYzEyMCAxMC43IDI0MCAxMC43IDM2MC0xMC42IDEyMC0yMS43IDI0MC02My43IDMwMC04NS40bDYwLTIxLjN2Mjg4SDB6Ii8+PC9zdmc+);
+}
+
+.banner .content .profilePic {
+    flex: 1 1;
+}
+
+.banner .content .profilePic img {
+    max-width: 100%;
+    width: 350px;
+}
+
+.banner .content .decription {
+    flex: 1 1;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.banner .content .decription .designation {
+    font-size: 2rem;
+}
+
+.pageContent {
+    padding: 50px;
+    z-index: 99;
+    position: relative;
+}
+
+.summarySec, .skillSetSec, .recentwork {
+    padding: 30px 50px;
+    border-radius: 3px;
+}
+
+.summarySec .summaryBox ul {
+    list-style: circle;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.summarySec .summaryBox ul li {
+    padding-bottom: 5px;
+}
+
+.skillSetSec .explore-button {
+    border: 1px solid white;
+    padding: 10px 5px;
+    background-color: transparent;
+    border-radius: 4px;
+    color: white;
+}
+
+.skillSetSec .skillBox {
+    margin-top: 10px;
+}
+
+.skillSetSec .skillBox ul {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.skillSetSec .skillBox ul li {
+    margin: 10px;
+    white-space: nowrap;
+    padding: 10px 20px;
+    color: #fff;
+    border: 2px solid #ff7626;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.skillSetSec .skillBox ul li {
+    position: relative;
+    margin: 20px 10px 10px;
+    white-space: nowrap;
+    padding: 10px 20px;
+    color: #fff;
+    border: 2px solid #ff7626;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+}
+
+body.dayMode .skillSetSec .skillBox ul li {
+    color: #000;
+}
+
+.skillSetSec .skillBox ul li:hover {
+    background-color: rgba(255, 118, 38, 0.42);
+}
+
+body.dayMode .skillSetSec .skillBox ul li:hover {
+    background-color: rgba(255, 118, 38, 0.2);
+}
+
+.skillSetSec .skillBox ul li .starRate {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: center;
+    background: url(../images/star.svg);
+    padding: 5px 20px 5px 10px;
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: right;
+    transition: all 0.3s ease-in-out;
+}
+
+.skillSetSec .skillBox ul li:hover .starRate {
+    transform: translateX(-50%) scale(1);
+}
+
+.recentworkBox ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-flow: wrap;
+    padding: 0;
+}
+
+.recentwork {
+    width: 100%;
+}
+
+.recentworkBox ul li {
+    display: flex;
+    margin: 10px;
+    width: 20%;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid rgba(128, 128, 128, 0.41);
+}
+
+.recentworkBox ul li a[data-info="hgs"] {
+    background-image: url(../images/hgs-micro.png);
+}
+
+.recentworkBox ul li a[data-info="woolmagazine"] {
+    background-image: url(../images/wool-magazine.png);
+}
+
+.recentworkBox ul li a[data-info="woodcraft"] {
+    background-image: url(../images/woodcraft.png);
+}
+
+.recentworkBox ul li a[data-info="mobikart"] {
+    background-image: url(../images/mobikart.png);
+}
+
+.recentworkBox ul li a {
+    position: relative;
+    color: #fff;
+    padding: 30px;
+    width: 100%;
+    padding: 100px 20px 20px;
+    text-decoration: none;
+    transform: scale(1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s ease-in-out;
+}
+
+.recentworkBox ul li a:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.recentworkBox ul li a span {
+    position: absolute;
+    bottom: 3px;
+    left: 5px;
+    z-index: 99;
+    transform: scale(1);
+    transition: all 1s ease-in-out;
+}
+
+.recentworkBox ul li:hover a span {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    transform: scale(0.88);
+}
+
+.recentworkBox ul li:hover a {
+    transform: scale(1.2);
+}
+
+footer {
+    padding: 30px;
+    justify-content: space-around;
+    flex-flow: wrap;
+    position: relative;
+    background: black;
+    box-shadow: 0 0 10px 1px rgb(0 0 0 / 45%);
+    z-index: 9;
+    transition: all 0.5s ease-in-out;
+}
+
+body.dayMode footer {
+    background: #fff;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.20);
+}
+
+footer, footer .contactInfo {
+    display: flex;
+    align-items: center;
+}
+
+footer .contactInfo {
+    flex-flow: wrap;
+    flex: 1 1;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+footer .socialInfo {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+footer .subTTl {
+    color: #ff7626;
+    margin: 0;
+}
+
+footer .contactInfo a {
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+body.dayMode footer .contactInfo a {
+    color: #000;
+}
+
+footer .contactInfo a:hover {
+    text-decoration: underline;
+}
+
+footer .socialInfo a {
+    position: relative;
+    top: 0;
+    transform: scale(1);
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+footer .socialInfo a:hover {
+    top: -3px;
+    transform: scale(1.1);
+}
+
+footer .contactInfo a img {
+    max-width: 20px;
+    margin-right: 5px;
+}
+
+footer a img.black {
+    display: none;
+}
+
+body.dayMode footer a img.black {
+    display: block;
+}
+
+body.dayMode footer a img.white {
+    display: none;
+}
+
+footer .socialInfo a img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+footer a i {
+    position: relative;
+    top: 1px;
+    margin-right: 3px;
+}

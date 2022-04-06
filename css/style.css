@@ -327,8 +327,8 @@ body.dayMode .skillSetSec .skillBox ul li:hover {
     background-image: url(../images/woodcraft.png);
 }
 
-.recentworkBox ul li a[data-info="mobikart"] {
-    background-image: url(../images/mobikart.png);
+.recentworkBox ul li a[data-info="comfysloth"] {
+    background-image: url(../images/comfy-sloth.png);
 }
 
 .recentworkBox ul li a {

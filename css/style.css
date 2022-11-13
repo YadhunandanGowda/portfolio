@@ -183,12 +183,15 @@ body.dayMode section.common {
 }
 
 .banner .content .profilePic {
+    display: flex;
+    justify-content: center;
     flex: 1 1;
 }
 
 .banner .content .profilePic img {
     max-width: 100%;
-    width: 350px;
+    width: 250px;
+    border-radius: 50%;
 }
 
 .banner .content .decription {
